@@ -1,5 +1,5 @@
 body{
-    background-color:#A0BAAA;
+    background-color:#c4d4ca;
 }
 
 #banner{
@@ -39,12 +39,29 @@ body{
 
 #graph-well {
 	height: 525px;
+    background-color: #ddd;
+    border: 8px solid #c4d4ca;
+    border-radius: 12px;
+    width: 65%;
+    margin-top: 10px;
 }
 
-#graphBtn {
-	margin-top: 36px;
-    margin-left: 30px;
+#dictionary-panel {
+    top: -8px;
 }
+
+#caption {
+    border-left: 8px solid #c4d4ca;
+    border-right: 8px solid #c4d4ca;
+    border-top: none;
+    border-bottom: none;
+    width: 65%;
+    height: 126px;
+    font-size: 24px;
+    top: -8px;
+    resize: vertical;
+}
+
 
 #table-well {
 /*    margin-top: 18px;
@@ -54,35 +71,39 @@ body{
     max-height: 525px;
     overflow-y: scroll;
     overflow-x: hidden;
-    padding: 16px;
+    background-color: #ddd;
+    border: 8px solid #c4d4ca;
+    border-radius: 12px;
+    margin-top: 10px;
 }
 
 #data-table {
-    height: 100%;
-    max-width: 100%;
-/*    border-collapse: collapse;
-*/    background-color: white;
+    align-content: center;
+    text-align: center;
+}
+table {
+    background-color: white;
     text-align: center;
 }
 
 table, th, td {
     border: 1px solid black;
+    text-align: center;
 }
 
-th, td {
-    max-width: 60px;
-}
-
-th {
-    /*position: fixed;*/
-    transform: rotate(-90deg);
+#graphBtn {
+    margin-top: 36px;
+    margin-left: 30px;
 }
 
 #pdfButton {
-    margin-left: 30px;
-    padding: 30px;
-    background-color: #99D07A;
+    height: 108px;
+    border-radius: 12px;
+    border: 8px solid #c4d4ca;
+
+
 }
+
 
 /* Tooltip text */
 /*.tooltip .tooltiptext {

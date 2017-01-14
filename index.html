@@ -53,48 +53,48 @@
 					<table id="data-table"></table>
 				</div>
 
-<div class="panel panel-primary col-md-2" id="dictionary-panel">
-                    <div class="panel-heading text-center">
-                        <h4>Glossary</h4>
-                    </div>
-                    <div class="panel-body">
-                        <div class="dropup">
-                          <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Important Terms <span class="caret"></span>
-                          </button>
-                          <ul class="dropdown-menu" id = "dictionary-drop">
-                            <li role="separator" class="divider"></li>
-                            <li class = "term"><a data-toggle="modal" href="#myModal">Is your term not on this list?</a></li>
-                          </ul>
-                            <!-- Modal -->
-                                  <div class="modal fade" id="myModal" role="dialog">
-                                    <div class="modal-dialog">
+	<div class="panel panel-primary col-md-2" id="dictionary-panel">
+		<div class="panel-heading text-center">
+		    <h4>Glossary</h4>
+		</div>
+		<div class="panel-body">
+			<div class="dropup">
+				<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					Important Terms <span class="caret"></span>
+                </button>
+				<ul class="dropdown-menu" id = "dictionary-drop">
+					<li role="separator" class="divider"></li>
+					<li class = "term"><a data-toggle="modal" href="#myModal">Is your term not on this list?</a></li>
+				</ul>
+				<!-- Modal -->
+				<div class="modal fade" id="myModal" role="dialog">
+					<div class="modal-dialog">
                                     
-                                      <!-- Definition Modal content-->
-                                      <div class="modal-content">
-                                        <div class="modal-header">
-                                          <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                          <h4 class="modal-title"> 
-                                            <!-- Term Goes here -->
-                                          </h4>
-                                        </div>
-                                        <div class="modal-body">
-                                            <!-- definition goes here -->
-                                        </div>
-                                        <div class="modal-footer">
-                                          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                        </div>
-                                      </div>
+						<!-- Definition Modal content-->
+						<div class="modal-content">
+							<div class="modal-header">
+							  <button type="button" class="close" data-dismiss="modal">&times;</button>
+							  <h4 class="modal-title"> 
+							    <!-- Term Goes here -->
+							  </h4>
+							</div>
+							<div class="modal-body">
+							    <!-- definition goes here -->
+							</div>
+							<div class="modal-footer">
+							  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+							</div>
+						</div>
                                       
-                                    </div>
-                                  </div>
-                        </div>
-                    </div>
-                </div> <!-- dictionary-panel -->
+					</div> <!-- modal-dialog -->
+				</div> <!-- myModal -->
+			</div> <!-- dropup -->
+		</div> <!-- panel-body -->
+	</div> <!-- dictionary-panel -->
 	
 	<textarea placeholder="Write a caption for the graph here" class="col-md-8" id="caption"></textarea>
 
-	<button type="button" class="btn btn-success" id="pdfButton">Download PDF</button>
+	<button type="button" class="btn btn-success col-md-2" id="pdfButton">Download PDF</button>
 
 <!-- </div> -->		
 			<!-- </div> --> <!-- panel-body -->
