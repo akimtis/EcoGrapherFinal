@@ -85,7 +85,7 @@ $(document).ready(function(){
 	            categories: db.responseJSON.values[0] // this is the years
 	        },
 			title: {	
-	            text: 'Highcharts data from Google Spreadsheets'
+	            text: 'Jornada Ecological Data'
 	        },
 			series: [{
 	            name: selection1,
