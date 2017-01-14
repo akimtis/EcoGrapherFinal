@@ -6,12 +6,12 @@ $(document).ready(function(){
 		// console.log('you clicked: ' + $(this).text().trim());
 
 		if ($(this).text().trim() == selection1) {
-			$(this).css('background-color', '#A0BAAA');
+			$(this).css('background-color', '#c4d4ca');
 			$(this).css('color', 'black');
       $(this).css('padding', '0px');
 			selection1 = "";
 		} else if ($(this).text().trim() == selection2) {
-			$(this).css('background-color', '#A0BAAA');
+			$(this).css('background-color', '#c4d4ca');
 			$(this).css('color', 'black');
       $(this).css('padding', '0px');
 			selection2 = "";
