@@ -8,7 +8,7 @@ body{
   background-size: cover;
   background-repeat: no-repeat;
   color: white;
-  height: 100px;
+  height: 108px;
 }
 
 #banner h1{
@@ -30,6 +30,7 @@ body{
 .dataSet {
 	cursor: pointer;
 	margin-top: 18px;
+    padding: 5px;
 }
 .tooltip {
     position: relative;

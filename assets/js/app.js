@@ -8,12 +8,10 @@ $(document).ready(function(){
 		if ($(this).text().trim() == selection1) {
 			$(this).css('background-color', '#c4d4ca');
 			$(this).css('color', 'black');
-      $(this).css('padding', '0px');
 			selection1 = "";
 		} else if ($(this).text().trim() == selection2) {
 			$(this).css('background-color', '#c4d4ca');
 			$(this).css('color', 'black');
-      $(this).css('padding', '0px');
 			selection2 = "";
 		} else if ((selection1 != "") && (selection2 != "")) {
 			// do nothing-> show popover:
@@ -21,13 +19,11 @@ $(document).ready(function(){
 		} else if (selection1 == "") {
 			$(this).css('background-color', '#5BC0DE');
 			$(this).css('color', 'white');
-      $(this).css('padding', '5px');
 			selection1 = $(this).text().trim();
 			// console.log("selection1 set to: " + selection1);			
 		} else if (selection2 == "") {
 			$(this).css('background-color', '#5BC0DE');
 			$(this).css('color', 'white');
-      $(this).css('padding', '5px');
 			selection2 = $(this).text().trim();
 			// console.log("selection2 set to: " + selection2);
 		}
@@ -198,7 +194,6 @@ $(document).ready(function(){
 
     }
 
-    //for (var i = 0; i < definitions.length; i++) {
     for (var key in definitions) {
         var li = $("<li>");
         li.addClass("term");
