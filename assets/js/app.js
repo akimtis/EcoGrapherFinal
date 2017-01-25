@@ -42,7 +42,7 @@ $(document).ready(function(){
 		}).complete(function(data) {
 			console.log('completed!');
 			db = data;
-			console.log(db);
+			// console.log(db);
 
 			drawGraph(db);
 		});
@@ -60,15 +60,43 @@ $(document).ready(function(){
 	function drawGraph(db) {
     	var arrDataSets = db.responseJSON.values;
     	var hash = {
-    		Palmer : arrDataSets[1],
-    		Precipitation : arrDataSets[2].map(Number),
-    		Human : arrDataSets[3].map(Number),
-    		Plant : arrDataSets[4].map(Number),
-    		Rabbit : arrDataSets[5].map(Number),
-    		Soil : arrDataSets[6].map(Number),
-    		Mean : arrDataSets[7].map(Number)
+    		Palmer: {
+				data: arrDataSets[1],
+				color: '#9717ed',
+				units: ' (Scale: -10 to +10, Driest to Wettest)'
+			},
+    		Precipitation: {
+				data: arrDataSets[2].map(Number),
+				color: '#7eb6ea',
+				units: ' cm per year',
+			},
+    		Human: {
+				data: arrDataSets[3].map(Number),
+				color: '#823c06',
+				units: '',
+			},
+			Plant: {
+				data: arrDataSets[4].map(Number),
+				color: '#93eb82',
+				units: ' (avg. qty. of individual species per 49 meter grid)',
+			},
+			Rabbit: {
+				data: arrDataSets[5].map(Number),
+				color: '#ef5e81',
+				units: ' (per 10km of road)',
+			},
+    		Soil: {
+				data: arrDataSets[6].map(Number),
+				color: '#F5A362',
+				units: '°C (at 5cm depth)',
+			},
+    		Mean: {
+				data: arrDataSets[7].map(Number),
+				color: '#E3D25E',
+				units: '°C',
+			}
     	};
-
+    	console.log(arrDataSets[2].map(Number));
     	var key1 = getFirstWord(selection1);
     	var key2 = getFirstWord(selection2);
 
@@ -84,11 +112,19 @@ $(document).ready(function(){
 	            text: 'Jornada Ecological Data'
 	        },
 			series: [{
-	            name: selection1,
-	            data: JSON.parse("[" + hash[key1] + "]")	            
+	        	name: selection1,
+	        	color: hash[key1].color,
+	            tooltip: {
+	        		valueSuffix: hash[key1].units
+	        	},
+	            data: JSON.parse("[" + hash[key1].data + "]")	            
 	        }, {
 	        	name : selection2,
-	        	data: JSON.parse("[" + hash[key2] + "]")
+				color: hash[key2].color,
+	            tooltip: {
+	        		valueSuffix: hash[key2].units
+	        	},
+	        	data: JSON.parse("[" + hash[key2].data + "]")
 	        }]
 	    });
 	    drawTable(arrDataSets, hash, key1, key2);
@@ -96,14 +132,14 @@ $(document).ready(function(){
 
 
 	function drawTable(arrDataSets, hash, key1, key2) {
-		console.log(hash);
-		console.log("drawTable is alive with: " + arrDataSets + key1 + key2);
+		// console.log(hash);
+		// console.log("drawTable is alive with: " + arrDataSets + key1 + key2);
 
 		$('#data-table').empty();
 		var rows = arrDataSets[0].length;
 		$('#data-table').append("<th>Year</th><th>" + selection1 + "</th><th>" + selection2 + "</th>");
 		for (var i = 0; i < rows; i++) {
-			$('#data-table').append("<tr><td>" + arrDataSets[0][i] + "</td>" + "<td>" + hash[key1][i] + "</td>" + "<td>" + hash[key2][i] + "</td></tr>");
+			$('#data-table').append("<tr><td>" + arrDataSets[0][i] + "</td>" + "<td>" + hash[key1].data[i] + "</td>" + "<td>" + hash[key2].data[i] + "</td></tr>");
 		}
 	};
 
@@ -128,7 +164,6 @@ $(document).ready(function(){
 	// dictionary functionality
     var definitions = {
         'abundance': "(noun) abun·dance: The number of individuals or the representation of the number of individuals of a species in a particular ecosystem. Unit: number of individuals/sampling area or sampling effort."
-
         ,
         'biogeochemical': "(noun) bio·geo·chem·i·cal: of or relating to the partitioning and cycling of chemical elements and compounds between the living and nonliving parts of an ecosystem"
 

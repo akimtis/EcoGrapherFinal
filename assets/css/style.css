@@ -1,75 +1,92 @@
+html, body {
+    height: 100%;
+}
+#container {
+    height: 100%;
+}
 body{
-    background-color:#c4d4ca;
+    background-color: #c4d4ca;
+}
+#middle-row {
+    height: 70%;
+}
+#bottom-row {
+    height: 18%;
+}
+#top-row{
+    height: 12%;
+    background-image: url(desertpan.jpg);
+    background-position: 0% 25%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+/*  height: 108px;*/
 }
 
-#banner{
-  background-image: url(desertpan.jpg);
-  background-position: 0% 25%;
-  background-size: cover;
-  background-repeat: no-repeat;
-  color: white;
-  height: 108px;
-}
-
-#banner h1{
+#top-row h1{
   margin-left: 35px
 }
 
-#banner p{
+#top-row p{
   margin-left: 35px;
 }
-
+#selector-wrapper {
+    height: 100%;
+}
+#dataSelector {
+    height: 100%;
+    margin-top: 10px;
+    border: 1px solid black;
+    margin-left: 18px;
+    overflow-y: scroll;
+}
 #dataSelector h3{
-    margin-left: 20px;
+    /*margin-left: 20px;*/
 }
 
 #dataSelector p{
-    margin-left: 20px;
+    /*margin-left: 20px;*/
+    box-shadow: 2px;
+    overflow-wrap: 
 }
 
 .dataSet {
 	cursor: pointer;
-	margin-top: 18px;
+	margin-top: 8px;
     padding: 5px;
 }
-.tooltip {
+/*.tooltip {
     position: relative;
     display: inline-block;
-    border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+    border-bottom: 1px dotted black;
 }
-
+*/
 #graph-well {
-	height: 525px;
+	height: 100%;
     background-color: #ddd;
     border: 8px solid #c4d4ca;
     border-radius: 12px;
-    width: 65%;
-    margin-top: 10px;
+/*    width: 65%;
+*/    margin-top: 10px;
 }
 
 #dictionary-panel {
-    top: -8px;
+    margin-left: 18px;
 }
 
 #caption {
-    border-left: 8px solid #c4d4ca;
-    border-right: 8px solid #c4d4ca;
-    border-top: none;
-    border-bottom: none;
-    width: 65%;
+    width: 99%;
     height: 126px;
     font-size: 24px;
-    top: -8px;
+    position: relative;
+    right: 8px;
     resize: vertical;
 }
 
 
 #table-well {
-/*    margin-top: 18px;
-*//*  min-height: 525px;
-*/    
-    height: 525px;
-    max-height: 525px;
+    height: 100%;
+    max-height: 100%;
     overflow-y: scroll;
     overflow-x: hidden;
     background-color: #ddd;
@@ -86,10 +103,14 @@ table {
     background-color: white;
     text-align: center;
 }
-
+th {
+    font-size: 10px;
+    line-height: 1.2;
+}
 table, th, td {
     border: 1px solid black;
     text-align: center;
+    padding: 1px;
 }
 
 #graphBtn {
@@ -99,10 +120,11 @@ table, th, td {
 
 #pdfButton {
     height: 108px;
+    width: 100%;
     border-radius: 12px;
-    border: 8px solid #c4d4ca;
-
-
+    position: relative;
+    right: 24px;
+    top: 8px;
 }
 
 

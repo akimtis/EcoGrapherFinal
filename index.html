@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 	<head>
+		<meta charset="utf-8"/>
 		<script src="https://code.jquery.com/jquery.js"></script>
 
 		<!-- Enable highcharts -->
@@ -11,83 +12,94 @@
 		<script src="http://code.highcharts.com/modules/exporting.js"></script>
 		<!-- optional. Enable pdf creation to be done locally w/o highchart server-->
 		<!-- <script src="http://code.highcharts.com/modules/offline-exporting.js"></script> -->
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>EcoGrapher</title>
+<!-- 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+ -->		<title>EcoGrapher</title>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 		<link rel="stylesheet" type="text/css" href="./assets/css/style.css">
 	</head>
 	<body>
-		<div class="row" id="banner">
-				<h1 class="display-1">Data Preserves</h1>
-				<p class="lead">Compare ecological data sets with sharable graphs</p>
-		</div>
+		<div id="container" class="containter-fluid">
+			<div class="row" id="top-row">
+					<h1 class="display-1">Data Preserves</h1>
+					<p class="lead">Compare ecological data sets with sharable graphs</p>
+			</div> <!-- .row -->
 
+			<div id="middle-row" class="row">
+				<div id="selector-wrapper" class="col-xs-3">
+					<div id="dataSelector">
+						<h3>Select two data-sets to graph</h3>
+						<p class="dataSet">Palmer Drought Severity Index</p>
+						<p class="dataSet">Precipitation</p>
+						<p class="dataSet">Human Population in Dona Ana County</p>
+						<p class="dataSet">Plant Species Richness</p>
+						<p class="dataSet">Rabbit / Hare Abundance</p>
+						<p class="dataSet">Soil Temperature</p>
+						<p class="dataSet">Mean Air Temperature</p>
+						<button type="button" class="btn btn-info" id="graphBtn">Graph</button>
+					</div>
+				</div> <!-- #selector-wrapper -->
 
-		<div class="row">
-			<div class="col-md-2" id="dataSelector">
-				<h3>Select two data-sets to graph</h3>
-				<p class="dataSet">Palmer Drought Severity Index</p>
-				<p class="dataSet">Precipitation</p>
-				<p class="dataSet">Human Population in Dona Ana County</p>
-				<p class="dataSet">Plant Species Richness</p>
-				<p class="dataSet">Rabbit / Hare Abundance</p>
-				<p class="dataSet">Soil Temperature</p>
-				<p class="dataSet">Mean Air Temperature</p>
-				<button type="button" class="btn btn-info" id="graphBtn">Graph</button>
-			</div>
+				<div class="well well-sm col-xs-7" id="graph-well">
+				</div> <!-- graph-well -->
 
-			<div class="well col-md-8" id="graph-well">
-			</div> <!-- graph-well -->
-
-			<div class="well col-md-2" id="table-well">
-				<table id="data-table"></table>
-			</div>
-
-			<div class="panel panel-primary col-md-2" id="dictionary-panel">
-				<div class="panel-heading text-center">
-				    <h4>Glossary</h4>
+				<div class="well well-sm col-xs-2" id="table-well">
+					<table id="data-table"></table>
 				</div>
-				<div class="panel-body">
-					<div class="dropup">
-						<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							Important Terms <span class="caret"></span>
-		                </button>
-						<ul class="dropdown-menu" id = "dictionary-drop">
-							<li role="separator" class="divider"></li>
-							<li class = "term"><a data-toggle="modal" href="#myModal">Is your term not on this list?</a></li>
-						</ul>
-						<!-- Modal -->
-						<div class="modal fade" id="myModal" role="dialog">
-							<div class="modal-dialog">
-		                                    
-								<!-- Definition Modal content-->
-								<div class="modal-content">
-									<div class="modal-header">
-									  <button type="button" class="close" data-dismiss="modal">&times;</button>
-									  <h4 class="modal-title"> 
-									    <!-- Term Goes here -->
-									  </h4>
-									</div>
-									<div class="modal-body">
-									    <!-- definition goes here -->
-									</div>
-									<div class="modal-footer">
-									  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-									</div>
-								</div>
-		                                      
-							</div> <!-- modal-dialog -->
-						</div> <!-- myModal -->
-					</div> <!-- dropup -->
-				</div> <!-- panel-body -->
-			</div> <!-- dictionary-panel -->
-			
-			<textarea placeholder="Write a caption for the graph here" class="col-md-8" id="caption"></textarea>
+			</div>	<!-- .row -->
 
-			<button type="button" class="btn btn-success col-md-2" id="pdfButton">Download PDF</button>
+			<div id="bottom-row" class="row">
+				<div id="dic-wrapper" class="col-xs-3">
+					<div class="panel panel-primary" id="dictionary-panel">
+						<div class="panel-heading text-center">
+						    <h4>Glossary</h4>
+						</div>
+						<div class="panel-body">
+							<div class="dropup">
+								<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									Important Terms <span class="caret"></span>
+				                </button>
+								<ul class="dropdown-menu" id = "dictionary-drop">
+									<li role="separator" class="divider"></li>
+									<li class = "term"><a data-toggle="modal" href="#myModal">Is your term not on this list?</a></li>
+								</ul>
+								<!-- Modal -->
+								<div class="modal fade" id="myModal" role="dialog">
+									<div class="modal-dialog">
+				                                    
+										<!-- Definition Modal content-->
+										<div class="modal-content">
+											<div class="modal-header">
+											  <button type="button" class="close" data-dixsiss="modal">&times;</button>
+											  <h4 class="modal-title"> 
+											    <!-- Term Goes here -->
+											  </h4>
+											</div>
+											<div class="modal-body">
+											    <!-- definition goes here -->
+											</div>
+											<div class="modal-footer">
+											  <button type="button" class="btn btn-default" data-dixsiss="modal">Close</button>
+											</div>
+										</div>
+				                                      
+									</div> <!-- modal-dialog -->
+								</div> <!-- myModal -->						
+							</div> <!-- dropup -->
+						</div> <!-- panel-body -->
+					</div> <!-- dictionary-panel -->
+				</div> <!-- dic-wrapper -->
+				
+				<div class="col-xs-7">	
+					<textarea placeholder="Write a caption for the graph here" id="caption"></textarea>
+				</div>
 
-		</div>		
+				<div class="col-xs-2">
+					<button type="button" class="btn btn-success" id="pdfButton">Download PDF</button>
+				</div>
+			</div> <!-- .row -->
+		</div> <!-- container -->
+	
 		<script type="text/javascript" src="./assets/js/app.js"></script>
 	</body>
 </html>
