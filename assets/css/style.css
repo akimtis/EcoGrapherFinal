@@ -22,14 +22,21 @@ body{
     color: white;
 /*  height: 108px;*/
 }
-
+#head-wrapper {
+    margin-left: 2.25vw;
+    /*position: relative;*/
+    /*top: -1em;*/
+}
 #top-row h1{
-  margin-left: 35px
+/*    line-height: 6.125vh;*/
+    font-size: 4.25vh;
 }
 
 #top-row p{
-  margin-left: 35px;
+    line-height: 2vh;
+    font-size: 2.25vh;
 }
+
 #selector-wrapper {
     height: 100%;
 }
